@@ -385,3 +385,194 @@ footer {
     .social-fixed a { width: 40px; height: 40px; font-size: 20px; }
     .buttons { flex-direction: column; align-items: center; }
 }
+
+
+
+/* ===== قسم صور الخدمات ===== */
+.services-images-section {
+    padding: 40px 0;
+    background: #f8f9fa;
+}
+
+.services-images-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 35px;
+    margin: 30px 0;
+}
+
+.service-image-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: 0.3s;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.service-image-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.service-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.service-img:hover {
+    opacity: 0.9;
+}
+
+.service-image-card h3 {
+    color: #0a4b6e;
+    margin: 15px 0 10px;
+    font-size: 22px;
+}
+
+.service-image-card p {
+    padding: 0 15px;
+    color: #555;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.read-more-btn {
+    display: inline-block;
+    background: #0a4b6e;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+    margin-top: 5px;
+}
+
+.read-more-btn:hover {
+    background: #1e6f9f;
+    transform: scale(1.05);
+}
+
+/* ===== صفحات المقالات ===== */
+.article-page {
+    padding: 40px 0;
+}
+
+.article-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.article-header h1 {
+    font-size: 42px;
+    color: #0a4b6e;
+    margin-bottom: 10px;
+}
+
+.article-header .article-date {
+    color: #888;
+    font-size: 14px;
+}
+
+.article-content {
+    line-height: 1.9;
+    font-size: 18px;
+}
+
+.article-content h2 {
+    color: #0a4b6e;
+    margin: 30px 0 15px;
+    border-right: 4px solid #ffc107;
+    padding-right: 15px;
+}
+
+.article-content h3 {
+    color: #1e6f9f;
+    margin: 20px 0 10px;
+}
+
+.article-content p {
+    margin-bottom: 20px;
+}
+
+.article-content ul, .article-content ol {
+    margin: 15px 30px;
+}
+
+.back-to-home {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.back-to-home a {
+    display: inline-block;
+    background: #0a4b6e;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 40px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.back-to-home a:hover {
+    background: #ffc107;
+    color: #0a4b6e;
+}
+
+
+/* ===== أزرار التواصل الدائرية في أسفل اليمين ===== */
+.circle-buttons {
+    position: fixed;
+    bottom: 30px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 2000;
+}
+
+.circle-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 28px;
+    transition: 0.3s;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    color: white;
+}
+
+.circle-btn.whatsapp {
+    background: #25D366;
+}
+
+.circle-btn.phone {
+    background: #34B7F1;
+}
+
+.circle-btn:hover {
+    transform: scale(1.1);
+    opacity: 0.9;
+}
+
+/* للشاشات الصغيرة */
+@media (max-width: 768px) {
+    .circle-buttons {
+        bottom: 20px;
+        right: 15px;
+        gap: 12px;
+    }
+    .circle-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+    }
+}
