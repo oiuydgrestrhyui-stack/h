@@ -576,3 +576,847 @@ footer {
         font-size: 24px;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #ffffff;
+    color: #1e2a3e;
+    line-height: 1.8;
+    direction: rtl;
+    font-size: 18px;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+/* ===== الشريط العلوي ===== */
+.top-bar {
+    background: #0a4b6e;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.hamburger {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 5px;
+}
+
+.hamburger span {
+    width: 28px;
+    height: 3px;
+    background: white;
+    border-radius: 3px;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.logo-text {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* ===== القائمة الجانبية ===== */
+.side-menu {
+    position: fixed;
+    top: 0;
+    right: -280px;
+    width: 280px;
+    height: 100%;
+    background: #0a4b6e;
+    transition: 0.4s;
+    z-index: 200;
+    padding-top: 80px;
+    box-shadow: -2px 0 10px rgba(0,0,0,0.3);
+}
+
+.side-menu.open {
+    right: 0;
+}
+
+.side-menu ul {
+    list-style: none;
+}
+
+.side-menu ul li {
+    border-bottom: 1px solid #2a7a9e;
+}
+
+.side-menu ul li a {
+    display: block;
+    padding: 15px 25px;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: 0.2s;
+}
+
+.side-menu ul li a:hover {
+    background: #1e6f9f;
+    padding-right: 35px;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 150;
+    display: none;
+}
+
+.overlay.show {
+    display: block;
+}
+
+/* ===== أزرار ثابتة ===== */
+.fixed-buttons {
+    position: fixed;
+    bottom: 25px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 300;
+}
+
+.fixed-buttons a {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 26px;
+    color: white;
+    transition: 0.3s;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+
+.fixed-buttons .wa { background: #25D366; }
+.fixed-buttons .call { background: #34B7F1; }
+.fixed-buttons a:hover { transform: scale(1.1); }
+
+/* ===== الهيرو ===== */
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.breadcrumb {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.breadcrumb a {
+    color: #0a4b6e;
+    text-decoration: none;
+}
+
+.hero h1 {
+    font-size: 42px;
+    color: #0a4b6e;
+    margin-bottom: 10px;
+}
+
+.hero .eng {
+    font-size: 22px;
+    color: #1e6f9f;
+    margin-bottom: 15px;
+}
+
+.hero h2 {
+    font-size: 30px;
+    color: #0a4b6e;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    max-width: 700px;
+    margin: 0 auto 25px;
+    color: #444;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-call, .btn-wa {
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-call { background: #34B7F1; color: white; }
+.btn-wa { background: #25D366; color: white; }
+.btn-call:hover, .btn-wa:hover { transform: scale(1.03); opacity: 0.9; }
+
+/* ===== خدمات ===== */
+.services-section {
+    background: #f8f9fa;
+    padding: 50px 0;
+}
+
+.section-title {
+    font-size: 34px;
+    color: #0a4b6e;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    padding-bottom: 20px;
+    transition: 0.3s;
+}
+
+.service-card:hover { transform: translateY(-8px); }
+.service-card img { width: 100%; height: 180px; object-fit: cover; }
+.service-card h3 { color: #0a4b6e; margin: 15px 0 10px; }
+.service-card p { padding: 0 15px; color: #555; margin-bottom: 15px; }
+
+.read-more {
+    display: inline-block;
+    background: #0a4b6e;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.read-more:hover { background: #1e6f9f; }
+
+/* ===== موسوعة ===== */
+.encyclopedia {
+    background: linear-gradient(rgba(10,75,110,0.9), rgba(10,75,110,0.9)), url('https://placehold.co/1920x400/1e6f9f/white?text=Al+Amal+Clean');
+    background-size: cover;
+    color: white;
+    text-align: center;
+    padding: 60px 0;
+}
+
+.encyclopedia h2 { font-size: 38px; margin-bottom: 15px; }
+.encyclopedia p { font-size: 18px; max-width: 800px; margin: auto; }
+
+/* ===== محتوى ===== */
+.content {
+    padding: 50px 0;
+}
+
+.content h2 {
+    color: #0a4b6e;
+    margin: 40px 0 15px;
+    border-right: 4px solid #ffc107;
+    padding-right: 15px;
+}
+
+.content p { margin-bottom: 20px; }
+
+/* ===== إحصائيات ===== */
+.stats {
+    background: #0a4b6e;
+    color: white;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.stats h3 { font-size: 32px; margin-bottom: 30px; }
+
+.stats-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.stat span {
+    font-size: 40px;
+    font-weight: bold;
+    display: block;
+    color: #ffc107;
+}
+
+/* ===== شهادات ===== */
+.testimonials {
+    padding: 50px 0;
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.testimonial {
+    background: #f1f8ff;
+    padding: 20px;
+    border-radius: 15px;
+    font-style: italic;
+    border-right: 4px solid #0a4b6e;
+}
+
+/* ===== لماذا نحن ===== */
+.why-us {
+    background: #f8f9fa;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.why-us h3 { font-size: 32px; color: #0a4b6e; margin-bottom: 30px; }
+
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.why-item {
+    background: white;
+    padding: 12px;
+    border-radius: 40px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.call-text { font-size: 20px; margin-top: 20px; }
+
+/* ===== فوتر ===== */
+footer {
+    background: #0a4b6e;
+    color: white;
+    padding: 40px 0 20px;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.footer-col { flex: 1; min-width: 180px; }
+.footer-col h4 { margin-bottom: 15px; border-bottom: 2px solid #ffc107; display: inline-block; }
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 8px; }
+.footer-col ul li a { color: white; text-decoration: none; }
+.footer-col ul li a:hover { color: #ffc107; }
+
+.footer-bottom { text-align: center; padding-top: 20px; border-top: 1px solid #2a7a9e; }
+
+/* ===== استجابة ===== */
+@media (max-width: 768px) {
+    body { font-size: 16px; }
+    .hero h1 { font-size: 32px; }
+    .hero h2 { font-size: 24px; }
+    .logo-text { font-size: 14px; }
+    .logo-icon { width: 35px; height: 35px; }
+    .services-grid { grid-template-columns: 1fr; }
+    .fixed-buttons a { width: 45px; height: 45px; font-size: 22px; }
+    .stats-grid { flex-direction: column; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #ffffff;
+    color: #1e2a3e;
+    line-height: 1.7;
+    direction: rtl;
+    font-size: 17px;
+}
+
+.container {
+    width: 92%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 12px;
+}
+
+/* ===== الشريط العلوي ===== */
+.top-bar {
+    background: #0a4b6e;
+    color: white;
+    padding: 12px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.hamburger {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 5px;
+}
+
+.hamburger span {
+    width: 26px;
+    height: 3px;
+    background: white;
+    border-radius: 3px;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logo-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.logo-text {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* ===== القائمة الجانبية ===== */
+.side-menu {
+    position: fixed;
+    top: 0;
+    right: -280px;
+    width: 280px;
+    height: 100%;
+    background: #0a4b6e;
+    transition: 0.3s;
+    z-index: 200;
+    padding-top: 70px;
+    box-shadow: -2px 0 10px rgba(0,0,0,0.3);
+}
+
+.side-menu.open {
+    right: 0;
+}
+
+.side-menu ul {
+    list-style: none;
+}
+
+.side-menu ul li {
+    border-bottom: 1px solid #2a7a9e;
+}
+
+.side-menu ul li a {
+    display: block;
+    padding: 14px 22px;
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+    transition: 0.2s;
+}
+
+.side-menu ul li a:hover {
+    background: #1e6f9f;
+    padding-right: 30px;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 150;
+    display: none;
+}
+
+.overlay.show {
+    display: block;
+}
+
+/* ===== أزرار ثابتة مناسبة للتليفون ===== */
+.fixed-buttons {
+    position: fixed;
+    bottom: 20px;
+    right: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 300;
+}
+
+.fixed-buttons a {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 24px;
+    color: white;
+    transition: 0.3s;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+
+.fixed-buttons .wa { background: #25D366; }
+.fixed-buttons .call { background: #34B7F1; }
+.fixed-buttons a:hover { transform: scale(1.05); }
+
+/* ===== الهيرو ===== */
+.hero {
+    text-align: center;
+    padding: 40px 15px;
+}
+
+.breadcrumb {
+    color: #666;
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+.breadcrumb a {
+    color: #0a4b6e;
+    text-decoration: none;
+}
+
+.hero h1 {
+    font-size: 32px;
+    color: #0a4b6e;
+    margin-bottom: 8px;
+}
+
+.hero .eng {
+    font-size: 18px;
+    color: #1e6f9f;
+    margin-bottom: 12px;
+}
+
+.hero h2 {
+    font-size: 26px;
+    color: #0a4b6e;
+    margin-bottom: 18px;
+}
+
+.hero p {
+    max-width: 700px;
+    margin: 0 auto 22px;
+    color: #444;
+    font-size: 16px;
+}
+
+.buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-call, .btn-wa {
+    display: inline-block;
+    padding: 10px 24px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+    font-size: 15px;
+}
+
+.btn-call { background: #34B7F1; color: white; }
+.btn-wa { background: #25D366; color: white; }
+.btn-call:hover, .btn-wa:hover { transform: scale(1.02); opacity: 0.9; }
+
+/* ===== خدمات ===== */
+.services-section {
+    background: #f8f9fa;
+    padding: 40px 0;
+}
+
+.section-title {
+    font-size: 28px;
+    color: #0a4b6e;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+}
+
+.service-card {
+    background: white;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    text-align: center;
+    padding-bottom: 18px;
+    transition: 0.3s;
+}
+
+.service-card img { width: 100%; height: 160px; object-fit: cover; }
+.service-card h3 { color: #0a4b6e; margin: 14px 0 8px; font-size: 20px; }
+.service-card p { padding: 0 12px; color: #555; margin-bottom: 14px; font-size: 14px; }
+
+.read-more {
+    display: inline-block;
+    background: #0a4b6e;
+    color: white;
+    padding: 7px 18px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.read-more:hover { background: #1e6f9f; }
+
+/* ===== موسوعة ===== */
+.encyclopedia {
+    background: linear-gradient(rgba(10,75,110,0.92), rgba(10,75,110,0.92)), url('https://placehold.co/1920x400/1e6f9f/white?text=Al+Amal+Clean');
+    background-size: cover;
+    color: white;
+    text-align: center;
+    padding: 45px 20px;
+}
+
+.encyclopedia h2 { font-size: 28px; margin-bottom: 12px; }
+.encyclopedia p { font-size: 16px; max-width: 800px; margin: auto; }
+
+/* ===== محتوى ===== */
+.content {
+    padding: 40px 0;
+}
+
+.content h2 {
+    color: #0a4b6e;
+    margin: 35px 0 12px;
+    border-right: 4px solid #ffc107;
+    padding-right: 12px;
+    font-size: 22px;
+}
+
+.content p { margin-bottom: 18px; font-size: 16px; }
+
+/* ===== إحصائيات ===== */
+.stats {
+    background: #0a4b6e;
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.stats h3 { font-size: 26px; margin-bottom: 25px; }
+
+.stats-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.stat span {
+    font-size: 32px;
+    font-weight: bold;
+    display: block;
+    color: #ffc107;
+}
+
+/* ===== شهادات ===== */
+.testimonials {
+    padding: 40px 0;
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.testimonial {
+    background: #f1f8ff;
+    padding: 18px;
+    border-radius: 15px;
+    font-style: italic;
+    border-right: 4px solid #0a4b6e;
+    font-size: 15px;
+}
+
+/* ===== لماذا نحن ===== */
+.why-us {
+    background: #f8f9fa;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.why-us h3 { font-size: 26px; color: #0a4b6e; margin-bottom: 25px; }
+
+.why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.why-item {
+    background: white;
+    padding: 10px;
+    border-radius: 35px;
+    font-size: 14px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+
+.call-text { font-size: 18px; margin-top: 15px; }
+
+/* ===== فوتر ===== */
+footer {
+    background: #0a4b6e;
+    color: white;
+    padding: 35px 0 18px;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 25px;
+    margin-bottom: 25px;
+}
+
+.footer-col { flex: 1; min-width: 160px; }
+.footer-col h4 { margin-bottom: 12px; font-size: 18px; border-bottom: 2px solid #ffc107; display: inline-block; }
+.footer-col p, .footer-col ul li a { font-size: 14px; }
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 6px; }
+.footer-col ul li a { color: white; text-decoration: none; }
+.footer-col ul li a:hover { color: #ffc107; }
+
+.footer-bottom { text-align: center; padding-top: 15px; border-top: 1px solid #2a7a9e; font-size: 13px; }
+
+/* ===== تحسينات إضافية للتليفون ===== */
+@media (max-width: 480px) {
+    .why-grid { grid-template-columns: 1fr; }
+    .footer-content { flex-direction: column; text-align: center; }
+    .hero h1 { font-size: 28px; }
+    .hero h2 { font-size: 22px; }
+    .section-title { font-size: 24px; }
+}
